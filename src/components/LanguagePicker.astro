@@ -1,0 +1,43 @@
+---
+import { readFileSync, readdirSync } from 'fs';
+import { join } from 'path';
+
+export interface Props {
+  currentLang?: string;
+}
+
+const { currentLang } = Astro.props;
+
+const i18nDir = join(process.cwd(), 'public', 'i18n');
+const languages = readdirSync(i18nDir)
+  .filter((f) => f.endsWith('.json'))
+  .map((f) => {
+    const data = JSON.parse(readFileSync(join(i18nDir, f), 'utf-8'));
+    return data.meta;
+  });
+---
+
+<nav aria-label="Language picker">
+  <ul class="flex flex-wrap gap-3 justify-center list-none p-0 m-0">
+    {languages.map((lang) => (
+      <li>
+        <a
+          href={`/${lang.lang}/`}
+          class:list={[
+            'flex items-center gap-2 px-4 py-2 rounded-xl font-semibold transition-all',
+            lang.lang === currentLang
+              ? 'bg-white text-primary shadow-md'
+              : 'bg-white/20 text-white hover:bg-white/30',
+          ]}
+          aria-label={`Switch to ${lang.name}`}
+          aria-current={lang.lang === currentLang ? 'page' : undefined}
+          lang={lang.lang}
+          dir={lang.dir}
+        >
+          <span role="img" aria-hidden="true">{lang.flag}</span>
+          <span>{lang.name}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>

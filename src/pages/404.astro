@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404 – Page Not Found | salah.to" description="This page does not exist.">
+  <main class="min-h-screen flex flex-col items-center justify-center p-6 bg-gradient-to-b from-primary to-blue-900 text-center">
+    <div class="text-8xl mb-6" role="img" aria-label="Not found">🔍</div>
+    <h1 class="text-4xl font-bold text-white mb-4">Page not found</h1>
+    <p class="text-blue-200 text-lg mb-8">
+      This language or page doesn't exist yet.
+    </p>
+    <a
+      href="/"
+      class="bg-green-500 hover:bg-green-400 text-white font-bold py-4 px-8 rounded-2xl text-xl shadow-lg transition-all hover:scale-105"
+      aria-label="Go back to language picker"
+    >
+      ← Choose a language
+    </a>
+  </main>
+</Layout>
+
+<style>
+  .from-primary {
+    --tw-gradient-from: #1a5276;
+  }
+</style>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="200" height="300" role="img" aria-labelledby="sujud-title">
+  <title id="sujud-title">Sujud – Prostration position in prayer</title>
+  <!-- Head on ground -->
+  <circle cx="100" cy="215" r="20" fill="#2c3e50"/>
+  <!-- Body (angled down) -->
+  <rect x="70" y="170" width="60" height="50" rx="8" fill="#2c3e50" transform="rotate(-20, 100, 195)"/>
+  <!-- Left arm -->
+  <line x1="78" y1="200" x2="60" y2="230" stroke="#2c3e50" stroke-width="10" stroke-linecap="round"/>
+  <!-- Right arm -->
+  <line x1="122" y1="200" x2="140" y2="230" stroke="#2c3e50" stroke-width="10" stroke-linecap="round"/>
+  <!-- Hands on mat -->
+  <ellipse cx="57" cy="233" rx="10" ry="6" fill="#2c3e50"/>
+  <ellipse cx="143" cy="233" rx="10" ry="6" fill="#2c3e50"/>
+  <!-- Legs -->
+  <line x1="95" y1="165" x2="80" y2="130" stroke="#2c3e50" stroke-width="14" stroke-linecap="round"/>
+  <line x1="105" y1="165" x2="120" y2="130" stroke="#2c3e50" stroke-width="14" stroke-linecap="round"/>
+  <!-- Feet (toes curled on mat) -->
+  <ellipse cx="78" cy="126" rx="8" ry="5" fill="#2c3e50" transform="rotate(-30,78,126)"/>
+  <ellipse cx="122" cy="126" rx="8" ry="5" fill="#2c3e50" transform="rotate(30,122,126)"/>
+  <!-- Prayer mat -->
+  <rect x="30" y="238" width="140" height="18" rx="6" fill="#27ae60" opacity="0.8"/>
+</svg>

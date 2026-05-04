@@ -1,0 +1,45 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  lang?: string;
+  dir?: string;
+}
+
+const {
+  title,
+  description = 'Learn how to pray in Islam – a free, step-by-step guide for kids',
+  lang = 'en',
+  dir = 'ltr',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang} dir={dir}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#1a5276" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="salah.to" />
+
+    <!-- Privacy: no tracking -->
+    <meta name="robots" content="index, follow" />
+
+    <title>{title}</title>
+
+    <!-- Preconnect for performance -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Alpine.js (defer for performance) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.12/dist/cdn.min.js"></script>
+  </head>
+  <body class="bg-slate-50 min-h-screen">
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="200" height="300" role="img" aria-labelledby="ruku-title">
+  <title id="ruku-title">Ruku – Bowing position in prayer</title>
+  <!-- Head -->
+  <circle cx="50" cy="105" r="22" fill="#2c3e50"/>
+  <!-- Torso (horizontal) -->
+  <rect x="60" y="100" width="90" height="28" rx="8" fill="#2c3e50"/>
+  <!-- Spine indicator -->
+  <line x1="60" y1="114" x2="150" y2="114" stroke="#ecf0f1" stroke-width="2" stroke-dasharray="6,4"/>
+  <!-- Left arm down -->
+  <line x1="90" y1="128" x2="90" y2="170" stroke="#2c3e50" stroke-width="10" stroke-linecap="round"/>
+  <!-- Right arm down -->
+  <line x1="120" y1="128" x2="120" y2="170" stroke="#2c3e50" stroke-width="10" stroke-linecap="round"/>
+  <!-- Left hand on knee -->
+  <circle cx="90" cy="174" r="8" fill="#2c3e50"/>
+  <!-- Right hand on knee -->
+  <circle cx="120" cy="174" r="8" fill="#2c3e50"/>
+  <!-- Upper legs (vertical) -->
+  <line x1="90" y1="174" x2="90" y2="230" stroke="#2c3e50" stroke-width="14" stroke-linecap="round"/>
+  <line x1="120" y1="174" x2="120" y2="230" stroke="#2c3e50" stroke-width="14" stroke-linecap="round"/>
+  <!-- Feet -->
+  <ellipse cx="86" cy="234" rx="12" ry="6" fill="#2c3e50"/>
+  <ellipse cx="124" cy="234" rx="12" ry="6" fill="#2c3e50"/>
+  <!-- Prayer mat -->
+  <rect x="40" y="238" width="120" height="18" rx="6" fill="#27ae60" opacity="0.8"/>
+</svg>

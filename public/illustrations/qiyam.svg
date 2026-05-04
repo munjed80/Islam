@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="200" height="300" role="img" aria-labelledby="qiyam-title">
+  <title id="qiyam-title">Qiyam – Standing position in prayer</title>
+  <!-- Body -->
+  <circle cx="100" cy="40" r="22" fill="#2c3e50"/>
+  <!-- Torso -->
+  <rect x="82" y="62" width="36" height="80" rx="8" fill="#2c3e50"/>
+  <!-- Left arm raised -->
+  <line x1="82" y1="75" x2="55" y2="55" stroke="#2c3e50" stroke-width="10" stroke-linecap="round"/>
+  <!-- Right arm raised -->
+  <line x1="118" y1="75" x2="145" y2="55" stroke="#2c3e50" stroke-width="10" stroke-linecap="round"/>
+  <!-- Left leg -->
+  <line x1="92" y1="142" x2="82" y2="220" stroke="#2c3e50" stroke-width="14" stroke-linecap="round"/>
+  <!-- Right leg -->
+  <line x1="108" y1="142" x2="118" y2="220" stroke="#2c3e50" stroke-width="14" stroke-linecap="round"/>
+  <!-- Left foot -->
+  <ellipse cx="78" cy="224" rx="12" ry="6" fill="#2c3e50"/>
+  <!-- Right foot -->
+  <ellipse cx="122" cy="224" rx="12" ry="6" fill="#2c3e50"/>
+  <!-- Prayer mat -->
+  <rect x="40" y="228" width="120" height="18" rx="6" fill="#27ae60" opacity="0.8"/>
+</svg>
