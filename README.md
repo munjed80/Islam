@@ -34,7 +34,7 @@ Every Muslim child deserves to learn how to pray — regardless of language, dev
 
 | Tool | Purpose |
 |------|---------|
-| [Astro 4.x](https://astro.build) | Static site generation |
+| [Astro 5.x](https://astro.build) | Static site generation |
 | [TailwindCSS 3.x](https://tailwindcss.com) | Styling |
 | [Alpine.js 3.x](https://alpinejs.dev) | Interactive prayer player |
 | HTML5 Audio API | Audio playback |
