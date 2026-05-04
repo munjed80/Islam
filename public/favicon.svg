@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-labelledby="favicon-title">
+  <title id="favicon-title">salah.to – crescent and star</title>
+  <rect width="64" height="64" rx="12" fill="#1a5276"/>
+  <circle cx="26" cy="32" r="16" fill="#ecf0f1"/>
+  <circle cx="33" cy="26" r="11" fill="#1a5276"/>
+  <polygon points="48,8 50,14 56,14 51,18 53,24 48,20 43,24 45,18 40,14 46,14" fill="#f39c12"/>
+</svg>

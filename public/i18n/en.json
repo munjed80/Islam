@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "lang": "en",
+    "name": "English",
+    "dir": "ltr",
+    "translator": "salah.to team",
+    "font": "system-ui",
+    "flag": "🇬🇧",
+    "description": "Learn how to pray in Islam – a free, step-by-step guide for kids"
+  },
+  "ui": {
+    "start": "Start",
+    "next": "Next",
+    "replay": "Play again",
+    "well_done": "Well done! You can pray!",
+    "choose_language": "Choose your language",
+    "step_of": "Step {current} of {total}",
+    "restart": "Start over"
+  },
+  "steps": [
+    {
+      "id": "takbir",
+      "illustration": "/illustrations/qiyam.svg",
+      "arabic": "اللَّهُ أَكْبَرُ",
+      "transliteration": "Allahu Akbar",
+      "translation": "Allah is the Greatest",
+      "audio": "/audio/ar/takbir.mp3",
+      "explanation": "We start by praising Allah. Stand up straight and raise your hands."
+    },
+    {
+      "id": "fatiha",
+      "illustration": "/illustrations/qiyam.svg",
+      "arabic": "ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ",
+      "transliteration": "Alhamdulillahi Rabbil 'alamin",
+      "translation": "Praise be to Allah, the Lord of all worlds",
+      "audio": "/audio/ar/fatiha.mp3",
+      "explanation": "Now we thank Allah. We recite Al-Fatiha, the opening chapter of the Quran."
+    },
+    {
+      "id": "ruku",
+      "illustration": "/illustrations/ruku.svg",
+      "arabic": "رُكُوع",
+      "transliteration": "Ruku",
+      "translation": "Bowing",
+      "audio": "/audio/ar/takbir.mp3",
+      "explanation": "Now we bow down. Bend forward and put your hands on your knees."
+    },
+    {
+      "id": "ruku_dhikr",
+      "illustration": "/illustrations/ruku.svg",
+      "arabic": "سُبْحَانَ رَبِّيَ الْعَظِيمِ",
+      "transliteration": "Subhana Rabbiyal Adheem",
+      "translation": "Glory be to my Lord, the Magnificent",
+      "audio": "/audio/ar/takbir.mp3",
+      "explanation": "While bowing, we say this three times to praise Allah."
+    },
+    {
+      "id": "sujud",
+      "illustration": "/illustrations/sujud.svg",
+      "arabic": "سُجُود",
+      "transliteration": "Sujud",
+      "translation": "Prostration",
+      "audio": "/audio/ar/takbir.mp3",
+      "explanation": "Now we prostrate. Put your forehead, nose, hands, knees, and toes on the floor."
+    },
+    {
+      "id": "sujud_dhikr",
+      "illustration": "/illustrations/sujud.svg",
+      "arabic": "سُبْحَانَ رَبِّيَ الْأَعْلَى",
+      "transliteration": "Subhana Rabbiyal A'la",
+      "translation": "Glory be to my Lord, the Most High",
+      "audio": "/audio/ar/takbir.mp3",
+      "explanation": "While prostrating, we say this three times. Allah loves when we are humble."
+    },
+    {
+      "id": "salam",
+      "illustration": "/illustrations/salam.svg",
+      "arabic": "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ",
+      "transliteration": "As-salamu alaykum wa rahmatullah",
+      "translation": "Peace and mercy of Allah be upon you",
+      "audio": "/audio/ar/takbir.mp3",
+      "explanation": "We finish by turning our head right and left, saying peace to the angels."
+    }
+  ]
+}

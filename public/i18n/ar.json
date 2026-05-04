@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "lang": "ar",
+    "name": "العربية",
+    "dir": "rtl",
+    "translator": "فريق salah.to",
+    "font": "system-ui",
+    "flag": "🇸🇦",
+    "description": "تعلم كيف تصلي – دليل مجاني خطوة بخطوة للأطفال"
+  },
+  "ui": {
+    "start": "ابدأ",
+    "next": "التالي",
+    "replay": "مرة أخرى",
+    "well_done": "أحسنت! يمكنك الصلاة!",
+    "choose_language": "اختر لغتك",
+    "step_of": "خطوة {current} من {total}",
+    "restart": "ابدأ من جديد"
+  },
+  "steps": [
+    {
+      "id": "takbir",
+      "illustration": "/illustrations/qiyam.svg",
+      "arabic": "اللَّهُ أَكْبَرُ",
+      "transliteration": "الله أكبر",
+      "translation": "الله أكبر",
+      "audio": "/audio/ar/takbir.mp3",
+      "explanation": "نبدأ بتكبيرة الإحرام. قف مستقيماً وارفع يديك."
+    },
+    {
+      "id": "fatiha",
+      "illustration": "/illustrations/qiyam.svg",
+      "arabic": "ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ",
+      "transliteration": "الحمد لله رب العالمين",
+      "translation": "الحمد لله رب العالمين",
+      "audio": "/audio/ar/fatiha.mp3",
+      "explanation": "الآن نقرأ سورة الفاتحة، أول سور القرآن الكريم."
+    },
+    {
+      "id": "ruku",
+      "illustration": "/illustrations/ruku.svg",
+      "arabic": "رُكُوع",
+      "transliteration": "الركوع",
+      "translation": "الركوع",
+      "audio": "/audio/ar/takbir.mp3",
+      "explanation": "الآن نركع. انحنِ للأمام وضع يديك على ركبتيك."
+    },
+    {
+      "id": "ruku_dhikr",
+      "illustration": "/illustrations/ruku.svg",
+      "arabic": "سُبْحَانَ رَبِّيَ الْعَظِيمِ",
+      "transliteration": "سبحان ربي العظيم",
+      "translation": "سبحان ربي العظيم",
+      "audio": "/audio/ar/takbir.mp3",
+      "explanation": "في الركوع نقول هذا ثلاث مرات لتسبيح الله."
+    },
+    {
+      "id": "sujud",
+      "illustration": "/illustrations/sujud.svg",
+      "arabic": "سُجُود",
+      "transliteration": "السجود",
+      "translation": "السجود",
+      "audio": "/audio/ar/takbir.mp3",
+      "explanation": "الآن نسجد. ضع جبهتك وأنفك ويديك وركبتيك وأصابع قدميك على الأرض."
+    },
+    {
+      "id": "sujud_dhikr",
+      "illustration": "/illustrations/sujud.svg",
+      "arabic": "سُبْحَانَ رَبِّيَ الْأَعْلَى",
+      "transliteration": "سبحان ربي الأعلى",
+      "translation": "سبحان ربي الأعلى",
+      "audio": "/audio/ar/takbir.mp3",
+      "explanation": "في السجود نقول هذا ثلاث مرات. الله يحب التواضع."
+    },
+    {
+      "id": "salam",
+      "illustration": "/illustrations/salam.svg",
+      "arabic": "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ",
+      "transliteration": "السلام عليكم ورحمة الله",
+      "translation": "السلام عليكم ورحمة الله",
+      "audio": "/audio/ar/takbir.mp3",
+      "explanation": "ننهي الصلاة بالتسليم يميناً وشمالاً."
+    }
+  ]
+}

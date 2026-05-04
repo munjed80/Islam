@@ -1,0 +1,38 @@
+---
+export interface Props {
+  steps: Array<{
+    id: string;
+    illustration: string;
+    arabic: string;
+    transliteration: string;
+    translation: string;
+    audio: string;
+    explanation: string;
+  }>;
+  ui: {
+    start: string;
+    next: string;
+    replay: string;
+    well_done: string;
+    step_of: string;
+    restart: string;
+  };
+  lang: string;
+  dir: string;
+}
+
+const { steps, ui, lang, dir } = Astro.props;
+const stepsJson = JSON.stringify(steps);
+const uiJson = JSON.stringify(ui);
+---
+
+<!-- PrayerPlayer component – uses Alpine.js for interactivity -->
+<div
+  class="flex flex-col h-full"
+  x-data={`prayerPlayer(${stepsJson}, ${uiJson})`}
+  x-init="init()"
+  lang={lang}
+  dir={dir}
+>
+  <slot />
+</div>

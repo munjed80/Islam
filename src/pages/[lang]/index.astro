@@ -1,0 +1,265 @@
+---
+import { readFileSync, readdirSync } from 'fs';
+import { join } from 'path';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const i18nDir = join(process.cwd(), 'public', 'i18n');
+  const files = readdirSync(i18nDir).filter((f) => f.endsWith('.json'));
+  return files.map((f) => {
+    const data = JSON.parse(readFileSync(join(i18nDir, f), 'utf-8'));
+    return {
+      params: { lang: data.meta.lang },
+      props: { i18n: data },
+    };
+  });
+}
+
+const { i18n } = Astro.props;
+const { meta, ui, steps } = i18n;
+const stepsJson = JSON.stringify(steps);
+const uiJson = JSON.stringify(ui);
+---
+
+<Layout
+  title={`salah.to – ${ui.start} (${meta.name})`}
+  description={meta.description}
+  lang={meta.lang}
+  dir={meta.dir}
+>
+  <!-- Prayer Player powered by Alpine.js -->
+  <main
+    class="min-h-screen flex flex-col bg-gradient-to-b from-primary to-blue-900 overflow-hidden"
+    x-data={`prayerPlayer(${stepsJson}, ${uiJson})`}
+    x-init="init()"
+  >
+    <!-- Top bar: Progress dots + back link -->
+    <header class="flex items-center justify-between px-4 pt-4 pb-2">
+      <a
+        href="/"
+        class="text-blue-200 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10"
+        aria-label="Back to language picker"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M19 12H5M12 5l-7 7 7 7"/>
+        </svg>
+      </a>
+
+      <!-- Progress dots -->
+      <div class="flex gap-2" role="progressbar" :aria-valuenow="currentStep + 1" :aria-valuemax="steps.length" :aria-valuetext="`Step ${currentStep + 1} of ${steps.length}`">
+        <template x-for="(step, i) in steps" :key="i">
+          <button
+            class="w-3 h-3 rounded-full transition-all duration-300"
+            :class="i === currentStep ? 'bg-white scale-125' : (i < currentStep ? 'bg-green-400' : 'bg-white/30')"
+            @click="goToStep(i)"
+            :aria-label="`Go to step ${i + 1}`"
+            :aria-current="i === currentStep ? 'step' : undefined"
+          ></button>
+        </template>
+      </div>
+
+      <!-- Step counter -->
+      <span class="text-blue-200 text-sm font-medium" x-text="stepLabel"></span>
+    </header>
+
+    <!-- Main content area -->
+    <div class="flex-1 flex flex-col items-center justify-center px-4 py-2">
+
+      <!-- Completion screen -->
+      <div x-show="completed" x-transition class="text-center flex flex-col items-center gap-6">
+        <!-- Confetti animation -->
+        <div class="confetti-container" aria-hidden="true">
+          <template x-for="i in 20" :key="i">
+            <div class="confetti-piece" :style="`--delay: ${Math.random() * 2}s; --x: ${Math.random() * 300 - 150}px; --color: hsl(${Math.random() * 360}, 80%, 60%)`"></div>
+          </template>
+        </div>
+        <div class="text-6xl" role="img" aria-label="Celebration">🎉</div>
+        <h2 class="text-3xl font-bold text-white px-4" x-text="ui.well_done"></h2>
+        <button
+          @click="restart()"
+          class="mt-4 bg-green-500 hover:bg-green-400 text-white font-bold py-4 px-10 rounded-2xl text-xl shadow-lg transition-all hover:scale-105 active:scale-95"
+          :aria-label="ui.restart"
+          x-text="ui.restart"
+        ></button>
+      </div>
+
+      <!-- Step content -->
+      <template x-if="!completed">
+        <div class="flex flex-col items-center w-full max-w-sm gap-4" x-transition>
+
+          <!-- Arabic text -->
+          <div class="text-center px-4">
+            <p
+              class="text-3xl sm:text-4xl font-bold text-white leading-relaxed"
+              dir="rtl"
+              lang="ar"
+              x-text="steps[currentStep].arabic"
+            ></p>
+          </div>
+
+          <!-- Illustration -->
+          <div class="w-48 h-48 sm:w-56 sm:h-56 flex items-center justify-center bg-white/10 rounded-3xl p-4 backdrop-blur-sm">
+            <img
+              :src="steps[currentStep].illustration"
+              :alt="steps[currentStep].id + ' prayer position illustration'"
+              class="w-full h-full object-contain"
+              width="180"
+              height="180"
+            />
+          </div>
+
+          <!-- Transliteration -->
+          <p class="text-blue-100 text-lg italic text-center px-4" x-text="steps[currentStep].transliteration"></p>
+
+          <!-- Translation -->
+          <p class="text-white text-xl font-semibold text-center px-4" x-text="steps[currentStep].translation"></p>
+
+          <!-- Explanation -->
+          <p class="text-blue-200 text-sm text-center px-6 leading-relaxed" x-text="steps[currentStep].explanation"></p>
+
+          <!-- Audio controls -->
+          <div class="flex gap-3 mt-2">
+            <button
+              @click="playAudio()"
+              class="flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white font-semibold py-3 px-6 rounded-2xl transition-all hover:scale-105 active:scale-95"
+              :aria-label="ui.replay"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 3a9 9 0 100 18A9 9 0 0012 3zm-1 13V8l6 4-6 4z"/>
+              </svg>
+              <span x-text="ui.replay"></span>
+            </button>
+          </div>
+
+        </div>
+      </template>
+    </div>
+
+    <!-- Bottom: Next button -->
+    <footer class="px-4 pb-6 pt-2" x-show="!completed">
+      <button
+        @click="nextStep()"
+        class="w-full bg-green-500 hover:bg-green-400 text-white font-bold py-5 rounded-2xl text-2xl shadow-lg transition-all hover:scale-105 active:scale-95 disabled:opacity-50"
+        :aria-label="isLastStep ? ui.restart : ui.next"
+        x-text="buttonText"
+        :disabled="false"
+      ></button>
+    </footer>
+  </main>
+
+  <!-- Hidden audio element -->
+  <audio id="prayer-audio" preload="auto" aria-hidden="true"></audio>
+</Layout>
+
+<style>
+  .from-primary {
+    --tw-gradient-from: #1a5276;
+  }
+
+  /* Confetti animation */
+  .confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 50;
+  }
+
+  .confetti-piece {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    width: 10px;
+    height: 14px;
+    background: var(--color, #f39c12);
+    border-radius: 2px;
+    animation: confettiFall 3s var(--delay, 0s) ease-in forwards;
+    transform: translateX(var(--x, 0));
+  }
+
+  @keyframes confettiFall {
+    0% {
+      top: -10px;
+      opacity: 1;
+      transform: translateX(var(--x, 0)) rotate(0deg);
+    }
+    100% {
+      top: 100vh;
+      opacity: 0;
+      transform: translateX(calc(var(--x, 0) * 2)) rotate(720deg);
+    }
+  }
+</style>
+
+<script>
+  // Alpine.js component definition
+  document.addEventListener('alpine:init', () => {
+    window.Alpine.data('prayerPlayer', (steps, ui) => ({
+      steps,
+      ui,
+      currentStep: 0,
+      completed: false,
+      audio: null,
+
+      get isLastStep() {
+        return this.currentStep === this.steps.length - 1;
+      },
+
+      get stepLabel() {
+        return this.ui.step_of
+          .replace('{current}', this.currentStep + 1)
+          .replace('{total}', this.steps.length);
+      },
+
+      get buttonText() {
+        if (this.isLastStep) {
+          const label = this.ui.well_done.split('!')[0];
+          return `✓ ${label}!`;
+        }
+        return `${this.ui.next} →`;
+      },
+
+      init() {
+        this.audio = document.getElementById('prayer-audio');
+        // Auto-play audio on first step after a short delay
+        setTimeout(() => this.playAudio(), 600);
+      },
+
+      playAudio() {
+        const src = this.steps[this.currentStep].audio;
+        if (!src || !this.audio) return;
+        this.audio.src = src;
+        this.audio.play().catch((err) => {
+          // Audio playback failed – expected for placeholder/empty files
+          if (err.name !== 'NotSupportedError' && err.name !== 'AbortError') {
+            console.warn('[salah.to] Audio playback error:', err.message);
+          }
+        });
+      },
+
+      nextStep() {
+        if (this.isLastStep) {
+          this.completed = true;
+          return;
+        }
+        this.currentStep++;
+        setTimeout(() => this.playAudio(), 300);
+      },
+
+      goToStep(index) {
+        this.currentStep = index;
+        this.completed = false;
+        setTimeout(() => this.playAudio(), 300);
+      },
+
+      restart() {
+        this.currentStep = 0;
+        this.completed = false;
+        setTimeout(() => this.playAudio(), 300);
+      },
+    }));
+  });
+</script>

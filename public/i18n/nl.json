@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "lang": "nl",
+    "name": "Nederlands",
+    "dir": "ltr",
+    "translator": "salah.to team",
+    "font": "system-ui",
+    "flag": "🇳🇱",
+    "description": "Leer hoe je kunt bidden in de islam – een gratis, stap-voor-stap gids voor kinderen"
+  },
+  "ui": {
+    "start": "Begin",
+    "next": "Volgende",
+    "replay": "Nog een keer",
+    "well_done": "Goed gedaan! Je kunt bidden!",
+    "choose_language": "Kies je taal",
+    "step_of": "Stap {current} van {total}",
+    "restart": "Opnieuw beginnen"
+  },
+  "steps": [
+    {
+      "id": "takbir",
+      "illustration": "/illustrations/qiyam.svg",
+      "arabic": "اللَّهُ أَكْبَرُ",
+      "transliteration": "Allahoe Akbar",
+      "translation": "Allah is de Grootste",
+      "audio": "/audio/ar/takbir.mp3",
+      "explanation": "We beginnen met het prijzen van Allah. Ga rechtop staan en hef je handen op."
+    },
+    {
+      "id": "fatiha",
+      "illustration": "/illustrations/qiyam.svg",
+      "arabic": "ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ",
+      "transliteration": "Alhamdoelillahi Rabbiel 'alamien",
+      "translation": "Dank aan Allah, de Heer van alle werelden",
+      "audio": "/audio/ar/fatiha.mp3",
+      "explanation": "Nu bedanken we Allah. We lezen Al-Fatiha, het openingshoofdstuk van de Koran."
+    },
+    {
+      "id": "ruku",
+      "illustration": "/illustrations/ruku.svg",
+      "arabic": "رُكُوع",
+      "transliteration": "Roekoe",
+      "translation": "Buigen",
+      "audio": "/audio/ar/takbir.mp3",
+      "explanation": "Nu buigen we. Buig voorover en leg je handen op je knieën."
+    },
+    {
+      "id": "ruku_dhikr",
+      "illustration": "/illustrations/ruku.svg",
+      "arabic": "سُبْحَانَ رَبِّيَ الْعَظِيمِ",
+      "transliteration": "Soebhana Rabbijal 'Adhiem",
+      "translation": "Glorie aan mijn Heer, de Grootse",
+      "audio": "/audio/ar/takbir.mp3",
+      "explanation": "Tijdens het buigen zeggen we dit drie keer om Allah te prijzen."
+    },
+    {
+      "id": "sujud",
+      "illustration": "/illustrations/sujud.svg",
+      "arabic": "سُجُود",
+      "transliteration": "Soedjoed",
+      "translation": "Neerwerpen",
+      "audio": "/audio/ar/takbir.mp3",
+      "explanation": "Nu werpen we ons neer. Leg je voorhoofd, neus, handen, knieën en tenen op de grond."
+    },
+    {
+      "id": "sujud_dhikr",
+      "illustration": "/illustrations/sujud.svg",
+      "arabic": "سُبْحَانَ رَبِّيَ الْأَعْلَى",
+      "transliteration": "Soebhana Rabbijal A'la",
+      "translation": "Glorie aan mijn Heer, de Hoogste",
+      "audio": "/audio/ar/takbir.mp3",
+      "explanation": "Terwijl we ons neerwerpen, zeggen we dit drie keer. Allah houdt van bescheidenheid."
+    },
+    {
+      "id": "salam",
+      "illustration": "/illustrations/salam.svg",
+      "arabic": "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ",
+      "transliteration": "As-salaamu 'alaykum wa rahmatoellah",
+      "translation": "Vrede en genade van Allah zij met jullie",
+      "audio": "/audio/ar/takbir.mp3",
+      "explanation": "We eindigen door ons hoofd rechts en links te draaien, vrede wensend aan de engelen."
+    }
+  ]
+}
